@@ -10,6 +10,7 @@ class MovieTime extends Model
     use HasFactory;
 
     protected $fillable = [
+        'movie_id',
         'date',
         'time',
     ];

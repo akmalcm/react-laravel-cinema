@@ -14,12 +14,12 @@ class BookingSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        $arr1 = array('None', 'Combo', 'Couple');
-        $arr2 = array(0.00, 5.50, 10.00);
+        /* $arr1 = array('None', 'Combo', 'Couple');
+        $arr2 = array(0.00, 5.50, 10.00); */
 
         foreach (Movie::all() as $movie) {
             $i = random_int(0, 2);
-            Booking::factory()->count(2)->create(['movie_id' => $movie->id, 'package' => $arr1[$i], 'total' => $movie->price + $arr2[$i]]);
+            Booking::factory()->count(2)->create(['movie_id' => $movie->id, 'total' => $movie->price]);
         }
     }
 }

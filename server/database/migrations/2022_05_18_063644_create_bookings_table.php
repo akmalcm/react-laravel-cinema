@@ -19,7 +19,9 @@ return new class extends Migration
             //$table->unsignedBigInteger('user_id');
             //$table->unsignedBigInteger('seat_id');
             $table->string('IC',14);
-            $table->string('package',10);
+            $table->string('full_name',100);
+            $table->string('phone_no',14);
+            $table->integer('quantity');
             $table->decimal('total');
             $table->timestamps();
             

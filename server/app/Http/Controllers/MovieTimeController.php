@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\MovieTime;
 use Illuminate\Http\Request;
+use App\Http\Resources\MovieTimeResource;
 
-class MovieTimeController extends Controller
-{
+class MovieTimeController extends BaseController {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         return MovieTime::select('id', 'date', 'time', 'movie_id')->with('movie')->get();
     }
 
@@ -22,8 +21,7 @@ class MovieTimeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -33,8 +31,7 @@ class MovieTimeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -44,13 +41,12 @@ class MovieTimeController extends Controller
      * @param  \App\Models\MovieTime  $movieTime
      * @return \Illuminate\Http\Response
      */
-    public function show(MovieTime $movieTime)
-    {
-        $movieTime->with('movie');
-        $movieTime->with('bookings');
-        return response()->json([
-            'movie_time' => $movieTime
-        ]);
+    public function show(MovieTime $movieTime) {
+        if (is_null($movieTime)) {
+            return $this->sendError('Movie Time not found.');
+        }
+
+        return $this->sendResponse(new MovieTimeResource($movieTime), 'Movie Time retrieved successfully.');
     }
 
     /**
@@ -59,8 +55,7 @@ class MovieTimeController extends Controller
      * @param  \App\Models\MovieTime  $movieTime
      * @return \Illuminate\Http\Response
      */
-    public function edit(MovieTime $movieTime)
-    {
+    public function edit(MovieTime $movieTime) {
         //
     }
 
@@ -71,8 +66,7 @@ class MovieTimeController extends Controller
      * @param  \App\Models\MovieTime  $movieTime
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MovieTime $movieTime)
-    {
+    public function update(Request $request, MovieTime $movieTime) {
         //
     }
 
@@ -82,8 +76,7 @@ class MovieTimeController extends Controller
      * @param  \App\Models\MovieTime  $movieTime
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MovieTime $movieTime)
-    {
+    public function destroy(MovieTime $movieTime) {
         //
     }
 }

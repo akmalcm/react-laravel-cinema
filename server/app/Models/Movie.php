@@ -13,8 +13,8 @@ class Movie extends Model
         'title',
         'description',
         'poster',
-        'genre',
         'length',
+        'genre',
         'price',
         'mpaa_rating',
     ];

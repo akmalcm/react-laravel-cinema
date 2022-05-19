@@ -10,10 +10,13 @@ class Booking extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
+        // 'user_id',
+        'IC',
+        'full_name',
+        'phone_no',
+        'total',
+        'quantity',
         'movie_time_id',
-        'package',
-        'total'
     ];
 
     // returns the instance of movie time
