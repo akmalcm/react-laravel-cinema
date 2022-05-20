@@ -131,7 +131,7 @@ const PurchaseForm = () => {
                                         padding: '5px',
                                         height: '100%'
                                     }}
-                                    src={'http://localhost:8000/storage/movie/image/' + item.movie.poster}
+                                    src={`${process.env.REACT_APP_API_URL}/storage/movie/image/` + item.movie.poster}
                                     alt={item.movie.description}
                                 />
                                 <CardContent sx={{ flexGrow: 1 }}>
