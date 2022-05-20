@@ -40,7 +40,7 @@ const Home = (props) => {
     }, [])
 
     const fetchFigures = () => {
-        fetch("http://localhost:8000/api/movie")
+        fetch(`${process.env.REACT_APP_API_URL}/api/movie`)
             .then(res => res.json())
             .then((result) => {
                 setItems(result.data)
@@ -73,7 +73,7 @@ const Home = (props) => {
                         width: '50%',
                         margin: 'auto',
                     }}
-                    src={'http://localhost:8000/storage/movie/image/' + item.poster}
+                    src={`${process.env.REACT_APP_API_URL}/storage/movie/image/` + item.poster}
                     alt={item.title}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>

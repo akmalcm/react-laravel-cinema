@@ -35,7 +35,7 @@ const PurchaseForm = () => {
                 body: JSON.stringify(booking)
             };
 
-            let url = state.status === 'POST' ? "http://localhost:8000/api/booking" : "http://localhost:8000/api/booking/" + booking.id;
+            let url = state.status === 'POST' ? `${process.env.REACT_APP_API_URL}/api/booking` : `${process.env.REACT_APP_API_URL}/api/booking/` + booking.id;
 
             fetch(url, requestOptions)
                 .then(res => res.json())
@@ -79,7 +79,7 @@ const PurchaseForm = () => {
     };
 
     const movie_time_lists = item.movie.movie_times.map((movie_time) => (
-        <MenuItem value={movie_time.id}>{movie_time.date + ' ' + movie_time.time}</MenuItem>
+        <MenuItem key={movie_time.id} value={movie_time.id}>{movie_time.date + ' ' + movie_time.time}</MenuItem>
     ));
 
     const [movieTime, setMovieTime] = React.useState('');
@@ -169,6 +169,7 @@ const PurchaseForm = () => {
                                     label="IC Number"
                                     name="IC"
                                     autoComplete="IC"
+                                    autoFocus
                                     defaultValue={item.IC}
                                 />
                             </Grid>
@@ -180,7 +181,6 @@ const PurchaseForm = () => {
                                     fullWidth
                                     id="full_name"
                                     label="Full Name"
-                                    autoFocus
                                     defaultValue={item.full_name}
                                 />
                             </Grid>
@@ -224,7 +224,7 @@ const PurchaseForm = () => {
                                         name="movie_time_id"
                                         labelId="movie_time"
                                         id="movie_time"
-                                        //value={item.movie_time}
+                                        defaultValue={ item.movie_time ? item.movie_time.id : '' }
                                         label="movie_time"
                                         required
                                     >
