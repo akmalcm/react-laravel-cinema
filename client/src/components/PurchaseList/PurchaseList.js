@@ -69,7 +69,7 @@ const PurchaseList = (props) => {
     const handleDelete = (e, booking) => {
         e.preventDefault();
 
-        if (window.confirm('Delete this booking with detail:\nName: ' + booking.movie.title + '\nDate: ' + booking.date_added)) {
+        if (window.confirm('Delete this booking with detail:\nName: ' + booking.movie.title + '\nDate: ' + booking.created_at)) {
             fetch('http://localhost:8000/api/booking/' + booking.id, { method: 'DELETE' })
                 .then(() => {
                     setState({ status: 'Delete successful' });
