@@ -51,3 +51,13 @@ code {
   border-radius: 5%;
 
 }
+
+#homePagination{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}

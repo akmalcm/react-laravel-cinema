@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 const Footer = () => {
     return(
-        <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+        <Box sx={{ bgcolor: 'background.paper', p: 1 }} component="footer">
                 <Typography variant="h6" align="center" gutterBottom>
                     Cinema
                 </Typography>
