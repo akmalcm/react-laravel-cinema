@@ -22,10 +22,10 @@ Server:
 
 ## Sample Image
 ### Home page
-![home](https://github.com/akmalcm/react-laravel-cinema/blob/main/home.png)
+![home](https://github.com/akmalcm/react-laravel-cinema/blob/main/home.jpeg)
 
 ### Form page
-![form](https://github.com/akmalcm/lreact-laravel-cinema/blob/main/form.png)
+![form](https://github.com/akmalcm/react-laravel-cinema/blob/main/form.jpeg)
 
 ### List page
-![list](https://github.com/akmalcm/react-laravel-cinema/blob/main/list.png)
+![list](https://github.com/akmalcm/react-laravel-cinema/blob/main/list.jpeg)
