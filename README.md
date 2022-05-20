@@ -7,7 +7,8 @@ To run:
 
 Client:
 1. cd client > `npm install`
-2. `npm start`
+2. copy .env from .env.example
+3. `npm start`
 
 Server:
 1. cd server > `composer install`
