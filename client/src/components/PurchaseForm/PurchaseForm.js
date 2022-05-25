@@ -9,7 +9,6 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Copyright from '../Copyright/Copyright';
 import { Card, CardMedia, CardContent, Select } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
@@ -17,6 +16,7 @@ import FormattedMoney from '../Formatted/FormattedMoney';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import Footer from '../Footer/Footer';
 
 <link rel="stylesheet" href="index.css"></link>
 
@@ -129,14 +129,15 @@ const PurchaseForm = () => {
                                     sx={{
                                         // 16:9
                                         padding: '5px',
-                                        height: '100%'
+                                        maxHeight: '100%',
+                                        maxWidth: '100%'
                                     }}
                                     src={`${process.env.REACT_APP_API_URL}/storage/movie/image/` + item.movie.poster}
-                                    alt={item.movie.description}
+                                    alt={item.movie.title}
                                 />
                                 <CardContent sx={{ flexGrow: 1 }}>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {item.movie.name}
+                                        {item.movie.title}
                                     </Typography>
                                     <Typography>
                                         {item.movie.description}
@@ -224,7 +225,7 @@ const PurchaseForm = () => {
                                         name="movie_time_id"
                                         labelId="movie_time"
                                         id="movie_time"
-                                        defaultValue={ item.movie_time ? item.movie_time.id : '' }
+                                        defaultValue={item.movie_time ? item.movie_time.id : ''}
                                         label="movie_time"
                                         required
                                     >
@@ -259,8 +260,8 @@ const PurchaseForm = () => {
 
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 5 }} />
             </Container>
+            <Footer />
         </ThemeProvider>
     );
 }
