@@ -1,6 +1,7 @@
 # react-laravel-cinema
 A cinema application developed using ReactJS and Laravel
 
+Collaborate with: [Hidayat](https://github.com/hidayathsrzl)
 
 To run:
 1. Clone/Download this repo and cd to the workspace.
@@ -30,3 +31,5 @@ Server:
 
 ### List page
 ![list](https://github.com/akmalcm/react-laravel-cinema/blob/main/list.jpeg)
+
+Special thanks to : Fariz Gaskin
