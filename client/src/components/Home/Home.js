@@ -71,6 +71,7 @@ const Home = (props) => {
                         padding: '5px',
                         height: '50%',
                         width: '50%',
+                        maxHeight: '20rem',
                         margin: 'auto',
                     }}
                     src={`${process.env.REACT_APP_API_URL}/storage/movie/image/` + item.poster}
@@ -85,8 +86,8 @@ const Home = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" onClick={(e) => handlePurchase(item.id)}>Purchase</Button>
-                    <Typography gutterBottom variant="h6" component="h5" sx={{ textAlign: 'right', width: '100%' }}>
+                    <Button size="small" sx={{ml:2}} onClick={(e) => handlePurchase(item.id)}>Purchase</Button>
+                    <Typography gutterBottom variant="h6" component="h5" sx={{ textAlign: 'right', width: '100%', mr:2 }}>
                         <FormattedMoney value={item.price} />
                     </Typography>
                 </CardActions>
@@ -103,8 +104,8 @@ const Home = (props) => {
                 <Box id="top"
                     sx={{
                         bgcolor: 'background.paper',
-                        pt: 12,
-                        pb: 6,
+                        pt: 10,
+                        pb: 3,
                     }}
                 >
                     <Container id="topbox" maxWidth="sm">

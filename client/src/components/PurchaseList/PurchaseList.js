@@ -14,7 +14,7 @@ import Navigation from "../Navigation/Navigation";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import { Pagination } from "@mui/material";
 import usePagination from "../Pagination/Pagination";
@@ -113,10 +113,16 @@ const PurchaseList = (props) => {
             <Navigation />
             <Box sx={{
                 bgcolor: 'background.paper',
-                pt: 20,
+                pt: 4,
                 pb: 6,
-                mx: 20
+                px: 3,
+                mx: 20,
+                mt: 20,
+                borderRadius: 2
             }}>
+                <Typography variant="h6" align="center" color="black" paragraph>
+                    Purchase List
+                </Typography>
                 <TableContainer component={Paper} md={4}>
                     <Table size="small" aria-label="simple table">
                         <TableHead>
@@ -144,6 +150,7 @@ const PurchaseList = (props) => {
                     page={page}
                     variant="outlined"
                     shape="rounded"
+                    sx={{mt:2}}
                     onChange={handleChange}
                 />
 

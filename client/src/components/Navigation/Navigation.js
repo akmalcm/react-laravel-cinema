@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import CodeIcon from '@mui/icons-material/Code';
+import MovieIcon from '@mui/icons-material/Movie';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -15,7 +15,7 @@ const Navigation = (props) => {
     return (
         <AppBar position="fixed" sx={{ bgcolor: 'salmon' }}>
             <Toolbar>
-                <CodeIcon sx={{ mr: 2 }} />
+                <MovieIcon sx={{ mr: 2 }} />
                 <Typography variant="h6" color="inherit" noWrap>
                     Cinema
                 </Typography>
